@@ -1,16 +1,18 @@
 package com.bridgelabz.com;
 import org.w3c.dom.Node;
 public class CreateLinklist {
-	 Node head;
+	
+	    Node head;
 	    class Node {
 	        String data; 
 	        Node next;   
+
 	        Node(String data){
 	            this.data = data;
 	            this.next = null;
 	        }
 	    }
-	    //Adding the data in first 
+	    //Adding the data in first position
 	    public void addFirst(String data){
 	        Node newNode = new Node(data); 
 	        if(head == null){              
@@ -21,7 +23,7 @@ public class CreateLinklist {
 	        head = newNode;
 	    }
 
-	    // Adding the data last 
+	    // Adding the data to the last
 	    public void addLast(String data){
 	        Node newNode = new Node(data);
 	        if(head == null){
@@ -34,20 +36,20 @@ public class CreateLinklist {
 	        }
 	        tempNode.next = newNode;
 	    }
-	   
+	    //Printing the code
 	    void Print() {
-	        if (head == null) {                                  // Checking f head is empty or not
+	        if (head == null) {                                  
 	            System.out.println("Linked list is empty...");
 	            return;
 	        }
-	        Node tempNode = head;                                 // Taking temp node
-	        while (tempNode != null) {                          // Running the temp node throughout the linked list
-	            System.out.print(tempNode.data + "-");         // Printing temp node data
-	            tempNode = tempNode.next;                       // Storing next node in temp data
+	        Node tempNode = head;                                 
+	        while (tempNode != null) {                          
+	            System.out.print(tempNode.data + "-");         
+	            tempNode = tempNode.next;                       
 	        }
 	    }
 
-	    // 
+	    // Counting the size
 	    public int size() {
 	        int count = 0;
 
@@ -102,25 +104,44 @@ public class CreateLinklist {
 	            left.next = newNode;
 	        }
 	    }
-	            // Deleting the first element
-	            public void deleteFirst(){
-	                if(head == null){
-	                    System.out.println(" the list is empty");
-	                    return;
-	                }
-	                head = head.next;
-	            }
-	        
 
-	            public static void main(String[] args) {
-	            	CreateLinklist obj = new CreateLinklist();
-
-	                obj.addFirst("56");
-	                obj.addFirst("30");
-	                obj.addFirst("70");
-	                obj.insertIndex(2, "");
-	                obj.deleteFirst();
-	                obj.Print();
-	            }
-	        
+	    // Deleting the first element
+	    public void deleteFirst(){
+	        if(head == null){
+	            System.out.println(" the list is empty");
+	            return;
 	        }
+	        head = head.next;
+	    }
+
+	    // deleting the last element
+	    public void deleteLast(){
+	        if(head == null){
+	            System.out.println(" the list is empty");
+	            return;
+	        }
+	        if(head.next == null){
+	            head= null;
+	            return;
+	        }
+	        Node secoundLast = head;
+	        Node lastNode = head.next;
+	        while(lastNode.next != null){
+	            lastNode = lastNode.next;
+	            secoundLast = secoundLast.next;
+	        }
+	        secoundLast.next= null;
+	    }
+
+	    public static void main(String[] args) {
+	    	CreateLinklist obj = new CreateLinklist();
+
+	        obj.addFirst("56");
+	        obj.addFirst("30");
+	        obj.addFirst("70");
+	        obj.insertIndex(2, "");
+	       obj.deleteFirst();
+	        //obj.deleteLast();
+	        obj.Print();
+	    }
+	}
