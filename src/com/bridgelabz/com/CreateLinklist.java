@@ -157,9 +157,10 @@ public class CreateLinklist {
     public static void main(String[] args) {
     	CreateLinklist obj = new CreateLinklist();
 
-        obj.addFirst("56");
-        obj.addFirst("30");
         obj.addFirst("70");
+        obj.addFirst("40");
+        obj.addFirst("30");
+        obj.addFirst("56");
         obj.insertIndex(2, "");
         //obj.deleteFirst();
         //obj.deleteLast();
