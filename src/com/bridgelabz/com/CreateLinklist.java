@@ -102,14 +102,25 @@ public class CreateLinklist {
 	            left.next = newNode;
 	        }
 	    }
+	            // Deleting the first element
+	            public void deleteFirst(){
+	                if(head == null){
+	                    System.out.println(" the list is empty");
+	                    return;
+	                }
+	                head = head.next;
+	            }
+	        
 
-	    public static void main(String[] args) {
-	    	CreateLinklist obj = new CreateLinklist();
+	            public static void main(String[] args) {
+	            	CreateLinklist obj = new CreateLinklist();
 
-	        obj.addFirst("56");
-	        obj.addFirst("30");
-	        obj.addFirst("70");
-	        obj.insertIndex(2, "" );
-	        obj.Print();
-	    }
-	}
+	                obj.addFirst("56");
+	                obj.addFirst("30");
+	                obj.addFirst("70");
+	                obj.insertIndex(2, "");
+	                obj.deleteFirst();
+	                obj.Print();
+	            }
+	        
+	        }
